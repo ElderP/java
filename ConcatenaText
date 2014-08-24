@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+/** concatenar texto digitado na variável */
+
+public class ConcatenaText {
+
+	public static void main(String[] args) {
+		
+		String textoNovo, texto = "";
+		int resp = 1, cont = 1; 
+		
+		Scanner teclado = new Scanner(System.in);
+		Scanner tecladotexto = new Scanner(System.in);
+		
+			while  (resp == 1){
+				
+				System.out.println("Digite a "+cont+".a Parte do Nome ");
+				textoNovo = tecladotexto.nextLine();
+								
+				System.out.println("Deseja Adicionar mais ?  1-Sim 2-Não ");
+				resp = teclado.nextInt();
+							
+				cont++;
+				
+				texto = (texto+" "+ textoNovo);
+			}
+			
+		System.out.println("Nome Completo é : "+texto);
+		
+		
+		
+	}
+
+}
