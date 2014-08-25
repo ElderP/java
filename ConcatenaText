@@ -19,7 +19,13 @@ public class ConcatenaText {
 								
 				System.out.println("Deseja Adicionar mais ?  1-Sim 2-Não ");
 				resp = teclado.nextInt();
-							
+				
+				while ((resp > 2)) {
+					System.out.println("Atenção !!! Deseja Adicionar mais ?  1-Sim 2-Não ");
+					resp = teclado.nextInt();
+				}
+					
+				
 				cont++;
 				
 				texto = (texto+" "+ textoNovo);
