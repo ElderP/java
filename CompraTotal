@@ -1,0 +1,46 @@
+/**Faça um algoritmo que leia os preços de mercadorias informadas pelo usuário 
+e a quantidade comprada ate que o usuário não queria mais continuar mais 
+informando 0 como quantidade.
+Ao final o algoritmo exibe o total da compra*/
+
+import java.util.Scanner;
+
+public class CompraTotal {
+
+	public static void main(String[] args) {
+		
+		int cont =1;
+		double totalizador=0;
+		String sair ="a";
+		
+		Scanner teclado = new Scanner(System.in);
+							
+		System.out.println("Digite a Quantidade do item "+cont+" --> ");
+		double quantidadeItem = teclado.nextDouble(); //usei aqui um double por questão de poder comprar 1,5 quilos de carne
+		
+		while (quantidadeItem != 0) {
+			
+			System.out.println("Digite o preço do item "+cont+" --> ");
+			double valorItem = teclado.nextDouble();
+			
+			double totalItem = (valorItem*quantidadeItem);
+			
+			System.out.println("Total do item "+cont+" --> "+totalItem);
+			
+			totalizador+=totalItem;
+			
+			System.out.println("Total Parcial da Compra --> "+totalizador);
+				
+			cont++;
+			
+			System.out.println("Digite a Quantidade do item "+cont+" --> ");
+			quantidadeItem = teclado.nextDouble(); 
+		}
+		
+		System.out.println("Compra encerrada com Total Final --> "+totalizador);
+
+		
+		
+	}
+
+}
