@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class AusenciaAlunos {
+
+	public static void main(String[] args) {
+		
+		int turmas = 1, ausencia = 0; 
+		
+		Scanner teclado = new Scanner(System.in);
+		
+		for (int x = 0; x < turmas; x++ ){
+			
+			System.out.println("Digite o código de identificação da turma A,B,C... -> ");
+			String identificacao = teclado.next();
+			
+			System.out.println("Digite a quantidade de alunos da turma -> ");
+			int quantidadeAlunos = teclado.nextInt();
+			
+			System.out.println("Turma "+identificacao+"-"+quantidadeAlunos);
+			
+			for(int y = 0; y < quantidadeAlunos; y++){
+				
+				System.out.println("Digite o número da matricula do aluno -> ");
+				int matricula = teclado.nextInt();
+				
+				System.out.println("Digite A para Ausente e P para Presente -> ");
+				char chamada = teclado.nextShort();
+				
+				if ((chamada != "P") || (chamada != "p")){
+					ausencia++;
+					System.out.println(ausencia);	
+					
+				}	
+			
+			}
+				
+			double percentualAusencia = ((ausencia/quantidadeAlunos)*100);
+			
+			System.out.println("Turma "+identificacao+"-"+quantidadeAlunos+" Percentual de ausencia de "+percentualAusencia+" %");
+			
+				
+			
+		}
+
+	}
+
+}
