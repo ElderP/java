@@ -4,7 +4,8 @@ public class AusenciaAlunos {
 
 	public static void main(String[] args) {
 		
-		int turmas = 1, ausencia = 0; 
+		int turmas = 1, turmasAusenciaMaior5 = 0;
+		double ausencia = 0;
 		
 		Scanner teclado = new Scanner(System.in);
 		
@@ -22,26 +23,28 @@ public class AusenciaAlunos {
 				
 				System.out.println("Digite o número da matricula do aluno -> ");
 				int matricula = teclado.nextInt();
+							
+				System.out.println("Digite A para Ausente e P para Presente -> ");	
+				String chamada =  teclado.next();
 				
-				System.out.println("Digite A para Ausente e P para Presente -> ");
-				char chamada = teclado.nextShort();
-				
-				if ((chamada != "P") || (chamada != "p")){
-					ausencia++;
-					System.out.println(ausencia);	
-					
+				if ( (chamada.equals("A")) || (chamada.equals("a")) ) {
+					ausencia++;	
 				}	
 			
 			}
-				
+			System.out.println(ausencia);
+			
 			double percentualAusencia = ((ausencia/quantidadeAlunos)*100);
 			
 			System.out.println("Turma "+identificacao+"-"+quantidadeAlunos+" Percentual de ausencia de "+percentualAusencia+" %");
 			
-				
+			if (percentualAusencia > 5){
+				turmasAusenciaMaior5++;
+			}
 			
 		}
-
+		
+		System.out.println("total de turmas com ausencia superior a 5% é -> "+turmasAusenciaMaior5);
 	}
 
 }
