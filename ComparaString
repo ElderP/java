@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class ComparaString {
+
+	public static void main(String[] args) {
+		
+		Scanner teclado = new Scanner(System.in);
+		
+		System.out.println("Digite um nome");
+		String nome1 = teclado.nextLine(); 
+				
+		System.out.println("Digite outro nome para comparar");
+		String nome2 = teclado.nextLine();
+		
+		System.out.println(nome1);
+		System.out.println(nome2);
+		
+		if (nome1.equals(nome2)){
+			System.out.println("Nomes iguais");
+		}
+		else {
+			System.out.println("Nome diferentes");
+		}
+
+	}
+
+}
