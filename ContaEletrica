@@ -1,0 +1,75 @@
+/** 
+ * O algoritmo devera ler código até que para encerrar o código seja igual a "0"(zero)
+ * O número de kilowatts consumido do mes
+ * tipo de consumidor R (residencial) C (comercial)
+ * Se tipo for "R" taxa fixa de 40, se for "C" taxa fixa de 80
+ * Valor variável em "R" kilowatts*0.75 Se kilowatts < 300 (R1)
+ * Valor variável em "R" kilowatts*0.90 Se kilowatts >= 300 (R2)
+ * Valor variável em "C" kilowatts*1.75 Se kilowatts < 600 (C1)
+ * Valor variável em "C" kilowatts*2.10 Se kilowatts >= 600 (C2)
+ * Exibir o código consumidor, valor da conta, da unidade que mais consumiu
+ * Exibir Média do valor pago pelos consumidores
+ * */
+
+import java.util.Scanner;
+public class ContaEletrica {
+
+	public static void main(String[] args) {
+		
+		Scanner teclado = new Scanner(System.in);
+		
+		double precoKilowattsR1 = 0.75, precoKilowattsR2 = 0.90, precoKilowattsC1 = 1.75, precoKilowattsC2 = 2.10; 
+		double R1 = 300, C1 = 600, quantConsumo = 0, preco = 0, maiorConsumo = 0, totalContas = 0, maiorConta = 0, mediaContas = 0;
+		int cont = 0, maiorConsumidor = 0;
+		
+		System.out.println("Digite o código da unidade Consumidora : ");
+		int codigoConsumidor = teclado.nextInt();
+		
+		while (codigoConsumidor != 0){
+			System.out.println("Digite tipo de Consumidor Sendo (R)-Residencial e (C)-Comercial : ");
+			String tipoConsumidor = teclado.next();
+			System.out.println("Digite a quantidade de kilowatts consumido no mes : ");
+			quantConsumo = teclado.nextDouble();
+			
+			if ( (quantConsumo < R1) && (tipoConsumidor.equals("R")) ){
+				preco = (precoKilowattsR1);
+			}
+			else if ( (quantConsumo >= R1) && (tipoConsumidor.equals("R"))  ){
+				preco = (precoKilowattsR2);   
+			}
+			else if ( (quantConsumo < C1) && (tipoConsumidor.equals("C")) ){
+				preco = (precoKilowattsC1);
+			}
+			else if ( (quantConsumo >= C1) && (tipoConsumidor.equals("C")) ){
+				preco = (precoKilowattsC2);
+			}
+			else {
+				System.out.println("Tipo de consumidor invalido !!! ");
+			}
+			
+			double conta = quantConsumo*preco;
+			System.out.println("O Valor da Conta -> "+conta);
+			
+			cont++;
+			
+			if (quantConsumo > maiorConsumo){
+				maiorConsumidor = codigoConsumidor;
+				maiorConsumo = quantConsumo;
+				maiorConta = conta;
+			}
+			
+			totalContas+=conta;
+			
+			mediaContas = (totalContas/cont);
+		
+			System.out.println("Digite o código da unidade Consumidora : ");
+			codigoConsumidor = teclado.nextInt();
+		
+		}
+		
+		System.out.println("Maior consumidor -> "+maiorConsumidor+" Valor Pago -> "+maiorConta);
+		System.out.println("Media do valor pago pelos consumidores -> "+mediaContas);
+
+	}
+
+}
