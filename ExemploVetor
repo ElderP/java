@@ -20,7 +20,23 @@ public class ExemploVetor {
 		
 		for (int i=0; i<VetorStr.length;i++)
 			System.out.println(VetorStr[i]);
-
+		
+		int[][] NVetorInteiro = new int[3][2];
+		
+		NVetorInteiro[0][0]=1;
+		NVetorInteiro[0][1]=11;
+		NVetorInteiro[1][0]=3;
+		NVetorInteiro[1][1]=2;
+		NVetorInteiro[2][0]=4;
+		NVetorInteiro[2][1]=5;
+				
+		for (int i=0; i<3; i++){
+			for (int j=0; j<2; j++){
+				System.out.print(NVetorInteiro[i][j]+" ");
+			}
+			System.out.println();
+		}
+	
 	}
 
 }
