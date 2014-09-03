@@ -1,0 +1,26 @@
+/** Exemplos de utilização do Vetor */
+public class ExemploVetor {
+
+	public static void main(String[] args) {
+		int x = 6;
+		String nome = "Joelma";
+		
+		int[] VetorInteiros = new int[3];
+		
+		VetorInteiros[0] = 1;
+		VetorInteiros[1] = 3;
+		VetorInteiros[2] = 7;
+		
+		String[] VetorStr = new String[4];
+		
+		VetorStr[0] = "Ximbinha";
+		VetorStr[1] = "Pará";
+		VetorStr[2] = "Belem";
+		VetorStr[3] = "Joelma";
+		
+		for (int i=0; i<VetorStr.length;i++)
+			System.out.println(VetorStr[i]);
+
+	}
+
+}
